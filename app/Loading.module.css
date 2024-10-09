@@ -1,0 +1,54 @@
+/* globals.css or Loading.module.css */
+
+.loadingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(23, 23, 23);
+  z-index: 9999;
+}
+
+.spinner {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  position: absolute;
+  border: 6px solid transparent;
+  border-top-color: #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 0;
+  animation: spin 1.2s ease-in-out infinite;
+}
+
+.spinner::after {
+  border: 6px solid transparent;
+  border-bottom-color: #e74c3c;
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 10px;
+  animation: spin 0.8s ease-in-out infinite reverse;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
